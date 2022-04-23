@@ -7,7 +7,6 @@
     <p v-else data-test="description">
       {{task.description}}
     </p>
-
   </div>
 </template>
 

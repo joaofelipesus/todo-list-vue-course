@@ -1,11 +1,22 @@
 <template>
   <div id="app">
     <h1>Tarefas</h1>
+    <task-list :tasks="tasks" />
   </div>
 </template>
 
 <script>
-export default {}
+import TaskCard from './components/TaskCard.vue'
+import TaskList from './components/TaskList.vue'
+
+export default {
+  components: { TaskCard, TaskList },
+  data () {
+    return {
+      tasks: [{description: 'Do the dishes', status: 'done'}]
+    }
+  }
+}
 </script>
 
 <style>
