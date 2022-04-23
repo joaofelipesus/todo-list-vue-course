@@ -37,8 +37,8 @@ export default {
   }
 
   .progress-bar h2 {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
 
   .all-done {

@@ -1,9 +1,15 @@
 <template>
   <div id="app">
     <h1>Tarefas</h1>
-    <progress-bar :percentage="taskCompletePercentage" />
     <task-form @addTask="handleAddTask"/>
-    <task-list :tasks="tasks" />
+    <progress-bar
+      v-if="tasks.length > 0"
+      :percentage="taskCompletePercentage"
+    />
+    <task-list
+      v-if="tasks.length > 0"
+      :tasks="tasks"
+    />
   </div>
 </template>
 
@@ -16,12 +22,14 @@ export default {
   components: { TaskList, TaskForm, ProgressBar },
   data () {
     return {
-      tasks: [{ description: 'Do the dishes', status: 'done' }]
+      tasks: []
     }
   },
 
   computed: {
     taskCompletePercentage () {
+      if (this.tasks.length === 0) { return 0 }
+
       const finishedTasks = this.tasks.filter(task => {
         return task.status === 'done'
       }).length

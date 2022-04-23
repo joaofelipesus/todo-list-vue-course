@@ -13,12 +13,12 @@
         @removeCard="handleRemoveTask(index)"
       />
     </div>
-    <p
+    <h3
       v-else
       data-test="empty-list-message"
     >
       Todas as tartefas feitas.
-    </p>
+    </h3>
   </div>
 </template>
 
@@ -52,12 +52,14 @@ export default {
 <style>
   .task-list {
     width: 80%;
-    margin-left: 10%;
   }
 
   .cards {
     display: flex;
-    /* justify-content: space-between; */
     align-items: stretch;
+  }
+
+  h3 {
+    text-align: center;
   }
 </style>
