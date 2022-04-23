@@ -1,6 +1,9 @@
 <template>
   <div class="task-list">
-    <div v-if="tasks.length > 0">
+    <div
+      v-if="tasks.length > 0"
+      class="cards"
+    >
       <task-card
         v-for="(task, index) in tasks"
         :key="task.description"
@@ -50,5 +53,11 @@ export default {
   .task-list {
     width: 80%;
     margin-left: 10%;
+  }
+
+  .cards {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: stretch;
   }
 </style>
