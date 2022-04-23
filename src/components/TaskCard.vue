@@ -50,14 +50,20 @@ export default {
 </script>
 
 <style scoped>
+  p {
+    font-weight: bold;
+  }
+
   .task-card {
-    width: 10%;
-    border: 2px solid black;
+    width: 15%;
+    border-radius: 8px;
+    margin: 1em;
+    padding: 0.5em;
   }
 
   .close-card-button {
     all: unset;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.4);
     padding: 5px;
     border-radius: 15px;
     float: right;
@@ -68,6 +74,6 @@ export default {
   }
 
   .pending {
-    background: red;
+    background: #ED213A;
   }
 </style>
