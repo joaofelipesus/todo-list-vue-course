@@ -1,18 +1,26 @@
 <template>
   <div id="app">
     <h1>Tarefas</h1>
+    <task-form @addTask="handleAddTask"/>
     <task-list :tasks="tasks" />
   </div>
 </template>
 
 <script>
+import TaskForm from './components/TaskForm.vue'
 import TaskList from './components/TaskList.vue'
 
 export default {
-  components: { TaskList },
+  components: { TaskList, TaskForm },
   data () {
     return {
       tasks: [{ description: 'Do the dishes', status: 'done' }]
+    }
+  },
+
+  methods: {
+    handleAddTask (task) {
+      this.tasks.push(task)
     }
   }
 }
