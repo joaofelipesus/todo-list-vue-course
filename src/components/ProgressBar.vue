@@ -4,7 +4,7 @@
     :class="backgroundColor"
     data-test="progress-bar"
   >
-    {{ percentage }}%
+    <h2>{{ percentage }}%</h2>
   </div>
 </template>
 
@@ -33,17 +33,23 @@ export default {
     text-align: center;
     width: 50%;
     margin-bottom: 2em;
+    border-radius: 10px;
+  }
+
+  .progress-bar h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .all-done {
-    background: green;
+    background: linear-gradient(to right, #799F0C, #ACBB78);
   }
 
   .almost-done {
-    background: yellow;
+    background: linear-gradient(to right, #ffe259, #ffa751)
   }
 
   .a-lot-to-do {
-    background: red;
+    background: linear-gradient(to right, #FF416C, #FF4B2B)
   }
 </style>
