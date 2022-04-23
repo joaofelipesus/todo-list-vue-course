@@ -7,6 +7,7 @@
         :task="task"
         data-test="task-card"
         @changeStatus="hanldeChangeStatus(task, index)"
+        @removeCard="handleRemoveTask(index)"
       />
     </div>
     <p
@@ -36,6 +37,10 @@ export default {
       } else {
         task.status = 'done'
       }
+    },
+
+    handleRemoveTask (index) {
+      this.tasks.splice(index, 1)
     }
   }
 }

@@ -25,4 +25,12 @@ describe('TaskList', () => {
     await wrapper.vm.$nextTick()
     expect(tasks[0].status).toMatch('done')
   })
+
+  it('remove card when removeCard event is emmited by a TaskCard component', async () => {
+    const tasks = [{ status: 'pending', description: 'Drink water' }]
+    const wrapper = mount(TaskList, { propsData: { tasks: tasks } })
+    wrapper.find('[data-test="remove-task-button"').trigger('click')
+    await wrapper.vm.$nextTick()
+    expect(tasks.length).toBe(0)
+  })
 })

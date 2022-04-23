@@ -4,7 +4,13 @@
     :class="backgroundColorClass"
     @click="handleCardClick"
   >
-    <button class="close-card-button">X</button>
+    <button
+      @click="handleCloseButtonClick"
+      class="close-card-button"
+      data-test="remove-task-button"
+    >
+      X
+    </button>
     <p v-if="task.status === 'done'" data-test="description">
       <s data-test="marked-description">{{task.description}}</s>
     </p>
@@ -34,6 +40,10 @@ export default {
   methods: {
     handleCardClick () {
       this.$emit('changeStatus')
+    },
+
+    handleCloseButtonClick () {
+      this.$emit('removeCard')
     }
   }
 }

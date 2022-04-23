@@ -33,4 +33,12 @@ describe('TaskCard', () => {
     await wrapper.vm.$nextTick()
     expect(wrapper.emitted('changeStatus')).toBeTruthy()
   })
+
+  it('emits removeCard event', async () => {
+    const task = { status: 'done', description: 'Some cool task' }
+    const wrapper = shallowMount(TaskCard, { propsData: { task } })
+    wrapper.find('[data-test="remove-task-button"]').trigger('click')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.emitted('removeCard')).toBeTruthy()
+  })
 })
