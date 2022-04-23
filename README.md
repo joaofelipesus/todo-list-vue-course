@@ -1,4 +1,4 @@
-# todo
+# Project used to apply basic consepts of Vuejs, event handling and component comunication.
 
 ## Project setup
 ```
@@ -17,13 +17,10 @@ npm run build
 
 ### Run your tests
 ```
-npm run test
+npm run test:unit
 ```
 
 ### Lints and fixes files
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
