@@ -1,20 +1,32 @@
 <template>
   <div id="app">
     <h1>Tarefas</h1>
+    <progress-bar :percentage="taskCompletePercentage" />
     <task-form @addTask="handleAddTask"/>
     <task-list :tasks="tasks" />
   </div>
 </template>
 
 <script>
+import ProgressBar from './components/ProgressBar.vue'
 import TaskForm from './components/TaskForm.vue'
 import TaskList from './components/TaskList.vue'
 
 export default {
-  components: { TaskList, TaskForm },
+  components: { TaskList, TaskForm, ProgressBar },
   data () {
     return {
       tasks: [{ description: 'Do the dishes', status: 'done' }]
+    }
+  },
+
+  computed: {
+    taskCompletePercentage () {
+      const finishedTasks = this.tasks.filter(task => {
+        return task.status === 'done'
+      }).length
+      const completeTasks = finishedTasks / this.tasks.length
+      return parseInt(completeTasks * 100)
     }
   },
 

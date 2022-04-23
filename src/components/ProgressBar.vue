@@ -32,7 +32,7 @@ export default {
   .progress-bar {
     text-align: center;
     width: 50%;
-    margin-left: 25%;
+    margin-bottom: 2em;
   }
 
   .all-done {
