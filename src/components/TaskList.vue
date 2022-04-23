@@ -1,6 +1,9 @@
 <template>
   <div class="task-list">
-    <div v-if="tasks.length > 0">
+    <div
+      v-if="tasks.length > 0"
+      class="cards"
+    >
       <task-card
         v-for="(task, index) in tasks"
         :key="task.description"
@@ -10,12 +13,12 @@
         @removeCard="handleRemoveTask(index)"
       />
     </div>
-    <p
+    <h3
       v-else
       data-test="empty-list-message"
     >
       Todas as tartefas feitas.
-    </p>
+    </h3>
   </div>
 </template>
 
@@ -49,6 +52,14 @@ export default {
 <style>
   .task-list {
     width: 80%;
-    margin-left: 10%;
+  }
+
+  .cards {
+    display: flex;
+    align-items: stretch;
+  }
+
+  h3 {
+    text-align: center;
   }
 </style>
