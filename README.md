@@ -1,5 +1,7 @@
 # Project used to apply basic consepts of Vuejs, event handling and component comunication.
 
+![todo-list](https://user-images.githubusercontent.com/9594670/164910352-d1ea8cd9-b969-484e-b014-03003b98025f.gif)
+
 ## Project setup
 ```
 npm install
