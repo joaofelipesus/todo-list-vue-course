@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form>
+    <div>
       <input
         v-model="description"
         @keyup.enter="handleAddTask"
@@ -12,7 +12,7 @@
       >
         Add
       </button>
-    </form>
+    </div>
   </div>
 </template>
 
