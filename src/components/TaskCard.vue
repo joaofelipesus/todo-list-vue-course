@@ -1,5 +1,9 @@
 <template>
-  <div class="task-card" :class="backgroundColorClass">
+  <div
+    class="task-card"
+    :class="backgroundColorClass"
+    @click="handleCardClick"
+  >
     <button class="close-card-button">X</button>
     <p v-if="task.status === 'done'" data-test="description">
       <s data-test="marked-description">{{task.description}}</s>
@@ -24,6 +28,12 @@ export default {
       if (this.task.status === 'done') { return 'done' }
 
       return 'pending'
+    }
+  },
+
+  methods: {
+    handleCardClick () {
+      this.$emit('changeStatus')
     }
   }
 }

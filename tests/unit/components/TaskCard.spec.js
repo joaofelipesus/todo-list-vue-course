@@ -25,4 +25,12 @@ describe('TaskCard', () => {
     const wrapper = shallowMount(TaskCard, { propsData: { task } })
     expect(wrapper.find('[data-test="marked-description"]').exists()).toBeTruthy()
   })
+
+  it('emits changeStatus event', async () => {
+    const task = { status: 'done', description: 'Some cool task' }
+    const wrapper = shallowMount(TaskCard, { propsData: { task } })
+    wrapper.find('.task-card').trigger('click')
+    await wrapper.vm.$nextTick()
+    expect(wrapper.emitted('changeStatus')).toBeTruthy()
+  })
 })

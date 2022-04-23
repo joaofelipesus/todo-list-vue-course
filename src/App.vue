@@ -6,14 +6,13 @@
 </template>
 
 <script>
-import TaskCard from './components/TaskCard.vue'
 import TaskList from './components/TaskList.vue'
 
 export default {
-  components: { TaskCard, TaskList },
+  components: { TaskList },
   data () {
     return {
-      tasks: [{description: 'Do the dishes', status: 'done'}]
+      tasks: [{ description: 'Do the dishes', status: 'done' }]
     }
   }
 }
